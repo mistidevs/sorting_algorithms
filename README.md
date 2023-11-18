@@ -5,3 +5,8 @@
 1. What is the Big O notation, and how to evaluate the time complexity of an algorithm<br>
 2. How to select the best sorting algorithm for a given input<br>
 3. What is a stable sorting algorithm</p>
+
+<h2>Note</h2>
+<p> The project implements sorting in place in order to ensure that space complexity is roughly constant. We have implemented the algorithms on:<br>
+1. Arrays<br>
+2. Doubly linked lists</p>
