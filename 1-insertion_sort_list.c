@@ -1,9 +1,11 @@
 #include "sort.h"
+
 /**
-* insertion_sort_list - insertion sorting algorithm
-*	of doubly linked list
-* @list: linked list to sort
-*/
+ * insertion_sort_list - insertion sorting
+ *	algorithm of doubly linked list
+ * @list: linked list to sort
+ */
+
 void insertion_sort_list(listint_t **list)
 {
 	int n;
@@ -33,3 +35,4 @@ void insertion_sort_list(listint_t **list)
 		}
 	}
 }
+
