@@ -14,6 +14,10 @@ void insertion_sort_list(listint_t **list)
 	if (!list)
 		return;
 	tmp = *list;
+	if (tmp->next == NULL)
+	{
+		print_list(*list);
+	}
 	while (tmp)
 	{
 		while (tmp)
