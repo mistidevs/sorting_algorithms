@@ -1,45 +1,35 @@
 #include "sort.h"
-
+/**
+* insertion_sort_list - insertion sorting algorithm
+*	of doubly linked list
+* @list: linked list to sort
+*/
 void insertion_sort_list(listint_t **list)
 {
-        listint_t *sorted, *curr, *next, *aux, *temp;
+	int n;
+	listint_t *tmp;
 
-        sorted = NULL;
-        curr = *list;
+	if (!list)
+		return;
+	tmp = *list;
+	while (tmp)
+	{
+		while (tmp)
+		{
+			if (tmp->next)
+			{
+				if (tmp->n > tmp->next->n)
+				{
+					n = tmp->n;
+					*(int *)&tmp->n = tmp->next->n;
+					*(int *)&tmp->next->n = n;
+					tmp = *list;
 
-        while (curr != NULL)
-        {
-                next = curr->next;
-
-                if (sorted == NULL || sorted->n > curr->n)
-                {
-                        curr->next = sorted;
-                        sorted = curr;
-                } else
-                {
-                        aux = sorted;
-
-                        while (aux->next != NULL && aux->next->n <= curr->n)
-                                aux = aux->next;
-
-                        if (aux->next == NULL)
-                        {
-                                aux->next = curr;
-                                curr->prev = aux;
-                                curr->next = NULL;
-                        } else
-                        {
-                                temp = aux->next;
-                                aux->next = curr;
-                                curr->prev = aux;
-                                curr->next = temp;
-                                temp->prev = curr;
-                        }
-		print_list(aux);
-                }
-		/*print_list(sorted);*/
-                curr = next;
-        }
-
-        *list = sorted;
+					print_list(*list);
+					break;
+				}
+			}
+			tmp = tmp->next;
+		}
+	}
 }
