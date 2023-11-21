@@ -6,6 +6,7 @@
 * @arr: pointer to array
 * @low: start of array or sub-array
 * @high: end of array or sub-array
+* @size: the size of the full array
 *
 * Return: partition index
 */
@@ -28,7 +29,7 @@ for (i = low, j = high; 1; i++, j--)
 		j--;
 
 	if (i >= j)
-		return i;
+		return (i);
 
 	temp = arr[i];
 	arr[i] = arr[j];
@@ -39,10 +40,11 @@ for (i = low, j = high; 1; i++, j--)
 
 
 /**
-* quick_sort - recursive algorithm
+* quick_sort_recurse - recursive algorithm
 * @arr: array to sort
 * @low: starting index
 * @high: last index
+* @size: the size of the full array
 *
 * Return: void
 */
