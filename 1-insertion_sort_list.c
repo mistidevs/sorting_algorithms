@@ -37,4 +37,3 @@ void insertion_sort_list(listint_t **nodes)
 		head = head->next;
 	}
 }
-
