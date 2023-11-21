@@ -4,7 +4,7 @@
 * swap - swapping two nodes
 * @list: pointer to head of doubly linked list
 * @node1: first node to swap
-* node2: Second node to swap
+* @node2: Second node to swap
 *
 * Return: void
 */
