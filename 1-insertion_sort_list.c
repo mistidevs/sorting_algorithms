@@ -1,35 +1,40 @@
 #include "sort.h"
 /**
-* insertion_sort_list - insertion sorting algorithm
-*	of doubly linked list
-* @list: linked list to sort
-*/
-void insertion_sort_list(listint_t **list)
+ * insertion_sort_list - sort out doubly linked list
+ *		using insertion sort algorithm
+ * @nodes: doubly linked list
+ */
+
+void insertion_sort_list(listint_t **nodes)
 {
-	int n;
-	listint_t *tmp;
+	listint_t *current = NULL, *head = NULL;
 
-	if (!list)
+	/*if nodes is null or only one*/
+	if (nodes == NULL || *nodes == NULL || (*nodes)->next == NULL)
 		return;
-	tmp = *list;
-	while (tmp)
-	{
-		while (tmp)
-		{
-			if (tmp->next)
-			{
-				if (tmp->n > tmp->next->n)
-				{
-					n = tmp->n;
-					*(int *)&tmp->n = tmp->next->n;
-					*(int *)&tmp->next->n = n;
-					tmp = *list;
+	head = *nodes;
+	head = head->next;
 
-					print_list(*list);
-					break;
-				}
-			}
-			tmp = tmp->next;
+	while (head != NULL)
+	{
+		while (head->prev != NULL && head->n < head->prev->n)
+		{
+			current = head;
+			if (head->next != NULL)
+				(head->next)->prev = current->prev;
+			head->prev->next = current->next;
+			head = head->prev;
+			current->prev = head->prev;
+			current->next = head;
+			if (head->prev)
+				head->prev->next = current;
+			head->prev = current;
+			if (current->prev == NULL)
+				*nodes = current;
+			print_list(*nodes);
+			head = head->prev;
 		}
+		head = head->next;
 	}
 }
+
