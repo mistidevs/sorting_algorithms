@@ -8,13 +8,14 @@
 void value_swap(int *pivot, int *elem)
 {
 	int tmp = *elem;
-	*elem = *pi;
-	*pi = tmp;
+	*elem = *pivot;
+	*pivot = tmp;
 }
 
 /**
  * quick_sort - function that sorts an array of integers
  *              in ascending order using the Quick sort algorithm
+ *		Lomuto particing method
  * @array: array
  * @size: array's size
  * Return: void
