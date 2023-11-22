@@ -14,8 +14,8 @@ void value_swap(int *pivot, int *elem)
 
 /**
  * quick_sort - function that sorts an array of integers
- *              in ascending order using the Quick sort algorithm
- *		Lomuto particing method
+ *	in ascending order using the Quick sort algorithm
+ *	Lomuto particing method
  * @array: array
  * @size: array's size
  * Return: void
@@ -84,3 +84,4 @@ void helper_quick_s(int *array, int lo, int hi, size_t size)
 		helper_quick_s(array, pivot + 1, hi, size);
 	}
 }
+
